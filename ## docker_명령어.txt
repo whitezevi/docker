@@ -1,0 +1,12 @@
+## docker kill, rm, rmi
+
+1. container 종료
+    # docker kill $(docker ps -q)
+2. container 삭제
+    # docker rm $(docker ps -a -q)
+3. images 삭제
+    # docker rmi $(docker images -q)
+
+
+#!/bin/sh
+docker kill $(docker ps -q) && docker rm $(docker ps -a -q) && docker rmi $(docker images -q)
